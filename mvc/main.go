@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/pranotobudi/Go-REST-Microservices/mvc/app"
+)
 
 func main() {
 	fmt.Println("bismillah")
-	app.StartApplication()
+	app.StartApp()
 }
