@@ -7,6 +7,7 @@ import (
 
 func mapUrls() {
 	// http.HandleFunc("/users/:user_id", controllers.GetUser)
-	router.POST("/repositories", repositories.CreateRepo)
+	router.POST("/repository", repositories.CreateRepo)
+	router.POST("/repositories", repositories.CreateRepos)
 	router.GET("/marco", polo.Polo)
 }
