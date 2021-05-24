@@ -20,6 +20,7 @@ type Mock struct {
 
 func StartMockups() {
 	enabledMocks = true
+	fmt.Println("Mockup Start: enabledMocks")
 }
 func StopMockups() {
 	enabledMocks = false
@@ -37,8 +38,9 @@ func Post(url string, body interface{}, headers http.Header) (*http.Response, er
 	if enabledMocks {
 		//return local mocks without calling external resource!
 		mock := mocks[getMockId(http.MethodPost, url)]
-		// fmt.Println("mocks:", mocks)
-		// fmt.Println("mock:", mock)
+		fmt.Println("mocks:", mocks)
+		fmt.Println("mock:", mock)
+		fmt.Printf("mock.Response.Body:%+v \n", mock.Response.Body)
 		if mock == nil {
 			return nil, errors.New("no mockup found for given request")
 		}

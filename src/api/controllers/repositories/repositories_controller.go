@@ -20,6 +20,7 @@ func CreateRepo(c *gin.Context) {
 	result, err := services.RepositoryService.CreateRepo(request)
 	if err != nil {
 		c.JSON(err.Status(), err)
+		return
 	}
 	c.JSON(http.StatusCreated, result)
 }
