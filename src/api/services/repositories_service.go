@@ -99,7 +99,6 @@ func (s *reposService) createRepoConcurrent(input repositories.CreateRepoRequest
 	}
 
 	result, err := s.CreateRepo(input)
-
 	if err != nil {
 		output <- repositories.CreateRepositoriesResult{
 			Error: err,

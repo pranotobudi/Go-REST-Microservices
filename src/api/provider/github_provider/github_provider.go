@@ -25,8 +25,8 @@ func getAuthorizationHeader(accessToken string) string {
 func CreateRepo(accessToken string, request github.CreateRepoRequest) (*github.CreateRepoResponse, *github.GithubErrorResponse) {
 	headers := http.Header{}
 	headers.Set(headerAuthorization, getAuthorizationHeader(accessToken))
-
 	response, err := restclient.Post(urlCreateRepo, request, headers)
+
 	if err != nil {
 		log.Println(fmt.Sprintf("error when trying to create github repo: %s", err.Error()))
 		return nil, &github.GithubErrorResponse{
@@ -62,5 +62,5 @@ func CreateRepo(accessToken string, request github.CreateRepoRequest) (*github.C
 			Message:    "error unmarshal github create repo response",
 		}
 	}
-	return &github.CreateRepoResponse{}, nil
+	return &result, nil
 }
