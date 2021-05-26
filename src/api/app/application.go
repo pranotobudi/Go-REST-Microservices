@@ -2,6 +2,7 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/pranotobudi/Go-REST-Microservices/src/api/log"
 )
 
 var router *gin.Engine
