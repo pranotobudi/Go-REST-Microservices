@@ -38,6 +38,8 @@ func TestCreateRepoInvalidJsonRequest(t *testing.T) {
 	assert.EqualValues(t, "invalid json body", apiError.Message())
 }
 
+//THIS IS INTEGRATION TESTING - controller-service-provider-restclient
+
 func TestCreateRepoErrorFromGithub(t *testing.T) {
 	request, _ := http.NewRequest(http.MethodPost, "/repositories", strings.NewReader(`{"name":"testing"}`))
 	response := httptest.NewRecorder()
@@ -68,6 +70,8 @@ func TestCreateRepoErrorFromGithub(t *testing.T) {
 	assert.EqualValues(t, "Requires authentication", apiError.Message())
 
 }
+
+//THIS IS INTEGRATION TESTING - controller-service-provider-restclient
 
 func TestCreateRepoNoError(t *testing.T) {
 	request, _ := http.NewRequest(http.MethodPost, "/repositories", strings.NewReader(`{"name":"testing"}`))
